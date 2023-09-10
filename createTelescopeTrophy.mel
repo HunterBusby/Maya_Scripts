@@ -5,7 +5,7 @@ move -relative 0 7.301442 2 ;
 scale -relative 0.715396 1.40699 0.715396 ;
 rename "pCylinder1" "mainBodyTelescope";
 
-//create and adjust main body [subBodyTelescope]
+//create and adjust sub body [subBodyTelescope]
 polyCylinder -radius 1 -height 8 -subdivisionsX 16 -sy 8 -subdivisionsZ 1 -axis 0 1 0 -rcp 0 -createUVs 3 -constructionHistory 1;
 rotate -relative -objectSpace -forceOrderXYZ 75 0 0 ;
 move -relative 0 8.029754 4.718096 ;
@@ -27,7 +27,7 @@ polyBevel3 -fraction 0.5 -offsetAsFraction 1 -autoFit 1 -depth 1 -mitering 0 -mi
 rename "pCube1" "baseWood";
 
 
-// create bend and mirror swirlStand
+// create, bend, and mirror [swirlStand]
 polyCube -width 1 -height 1 -depth 1 -subdivisionsX 1 -subdivisionsY 1 -subdivisionsZ 16 -axis 0 1 0 -createUVs 4 -constructionHistory 1;
 rename "pCube1" "swirlStand";
 scale -relative 0.341675 1.53407 11.079037 ;
