@@ -1,0 +1,29 @@
+float $scale = 3;
+int $distMultiplier = 1;
+float $ballNum[] = {1, 2, 3, 4, 5, 6, 7, 8};
+
+polySphere -r $scale -sx 15 -sy 15 -ax 0 1 0 -cuv 2 -ch 1;
+
+polySphere -r ($scale += $distMultiplier) -sx 15 -sy 15 -ax 0 1 0 -cuv 2 -ch 1;
+move -r 0 ($scale * $ballNum[0]) ($scale * $ballNum[0]) ;
+
+polySphere -r ($scale += $distMultiplier) -sx 15 -sy 15 -ax 0 1 0 -cuv 2 -ch 1;
+move -r 0 ($scale * $ballNum[1]) ($scale * $ballNum[1]) ;
+
+polySphere -r ($scale += $distMultiplier) -sx 15 -sy 15 -ax 0 1 0 -cuv 2 -ch 1;
+move -r 0 ($scale * $ballNum[2]) ($scale * $ballNum[2]) ;
+
+polySphere -r ($scale += $distMultiplier) -sx 15 -sy 15 -ax 0 1 0 -cuv 2 -ch 1;
+move -r 0 ($scale * $ballNum[3]) ($scale * $ballNum[3]) ;
+
+polySphere -r ($scale += $distMultiplier) -sx 15 -sy 15 -ax 0 1 0 -cuv 2 -ch 1;
+move -r 0 ($scale * $ballNum[4]) ($scale * $ballNum[4]) ;
+
+polySphere -r ($scale += $distMultiplier) -sx 15 -sy 15 -ax 0 1 0 -cuv 2 -ch 1;
+move -r 0 ($scale * $ballNum[5]) ($scale * $ballNum[5]) ;
+
+polySphere -r ($scale += $distMultiplier) -sx 15 -sy 15 -ax 0 1 0 -cuv 2 -ch 1;
+move -r 0 ($scale * $ballNum[6]) ($scale * $ballNum[6]) ;
+
+polySphere -r ($scale += $distMultiplier) -sx 15 -sy 15 -ax 0 1 0 -cuv 2 -ch 1;
+move -r 0 ($scale * $ballNum[7]) ($scale * $ballNum[7]) ;
