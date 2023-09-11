@@ -10,16 +10,25 @@ polyCylinder -radius 1 -height 8 -subdivisionsX 16 -sy 8 -subdivisionsZ 1 -axis 
 rotate -relative -objectSpace -forceOrderXYZ 75 0 0 ;
 move -relative 0 8.029754 4.718096 ;
 rename "pCylinder1" "subBodyTelescope";
+select -add subBodyTelescope.e[0:15] ;
+polyBevel3 -fraction 0.1 -offsetAsFraction 1 -autoFit 1 -depth 1 -mitering 0 -miterAlong 0 -chamfer 1 -segments 1 -worldSpace 1 -smoothingAngle 30 -subdivideNgons 1 -mergeVertices 1 -mergeVertexTolerance 0.0001 -miteringAngle 180 -angleTolerance 180 -ch 1 subBodyTelescope.e[0:15];
 
 
-//create and adjust torus at the end [renamed]
+//create and adjust torus at the end [telescopeEndLens]
 polyTorus -radius 1 -sectionRadius 0.3 -twist 0 -subdivisionsX 16 -subdivisionsY 5 -axis 0 1 0 -createUVs 1 -constructionHistory 1;
 rotate -relative -objectSpace -forceOrderXYZ 75 0 0 ;
 move -relative 0 9.06503 8.581799 ;
 scale -relative 1.069794 1.069794 1.069794 ;
 rename "pTorus1" "telescopeEndLens";
 
-// Base cube Boleaned [renamed]
+//create sighthole torus [sightHole]
+polyTorus -radius 1 -sectionRadius 0.3 -twist 0 -subdivisionsX 16 -subdivisionsY 5 -axis 0 1 0 -createUVs 1 -constructionHistory 1;
+move -rotatePivotRelative -1.06602e-07 5.844819 -3.436192 ;
+rotate -relative -objectSpace -forceOrderXYZ 75 0 0 ;
+scale -relative 0.639257 0.639257 0.639257 ;
+rename "pTorus1" "sightHole";
+
+// Base cube Beveled [baseWood]
 polyCube -width 1 -height 1 -depth 1 -subdivisionsX 1 -subdivisionsY 1 -subdivisionsZ 1 -axis 0 1 0 -createUVs 4 -constructionHistory 1;
 scale -relative 9.341963 1 9.341963 ;
 select -add pCube1.e[1:2] pCube1.e[6:7] ;
@@ -35,7 +44,7 @@ move -relative 0 4.52342 0 ;
 select -replace swirlStand ;
 rotate -relative -objectSpace -forceOrderXYZ -57.273353 19.946766 0 ;
 Bend;
-select -r bend1Handle ;
+select -replace bend1Handle ;
 setAttr "bend1Handle.rotateX" -25;
 setAttr "bend1Handle.rotateY" 0;
 setAttr "bend1.curvature" 130;
