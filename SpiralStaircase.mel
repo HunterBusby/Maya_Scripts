@@ -12,6 +12,6 @@ proc CreateSpiralStairs(float $stairnum, float $stairWidth, float $stairHeight, 
     }
 }
 
-CreateSpiralStairs(15,1.0, 1.0, 3, 2, 2, 55, 10, 2, -3);
+CreateSpiralStairs(15,1.0, 1.0, 3, 2, 1.5, 55, 18, 2, -3);
 //                  1   2   3   4  5  6   7   8  9  10
 // 1 [number of stairs] 2[width] 3[height] 4[depth] 5[position] 6[bigstep or smallstep] 7[rotation] 8[rotationdegree] 9[centerpivotX] 10[centerpivotZ]
