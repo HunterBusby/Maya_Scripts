@@ -1,0 +1,17 @@
+proc CreateSpiralStairs(float $stairnum, float $stairWidth, float $stairHeight, float $stairDepth, float $stairHeightPosition, float $stairHeightDifference, float $stepRotationstart, float $stepRotationDegree, float $spiralpivotX, float $spiralpivotZ)
+{
+    for ($i = 0; $i <= $stairnum; $i++)
+    {
+        polyCube -w $stairWidth -h $stairHeight -d $stairDepth -sx 1 -sy 1 -sz 1 -cuv 4 -ch 1;
+        move -relative 0 $stairHeightPosition 0 ;
+        xform -rp $spiralpivotX 0 $spiralpivotZ pCube1;
+        rotate -r 0 $stepRotationstart 0;
+        rename "pCube1" "Step";
+        $stairHeightPosition = ($stairHeightPosition + $stairHeightDifference) ;
+        $stepRotationstart = ($stepRotationstart + $stepRotationDegree);
+    }
+}
+
+CreateSpiralStairs(15,1.0, 1.0, 3, 2, 2, 55, 10, 2, -3);
+//                  1   2   3   4  5  6   7   8  9  10
+// 1 [number of stairs] 2[width] 3[height] 4[depth] 5[position] 6[bigstep or smallstep] 7[rotation] 8[rotationdegree] 9[centerpivotX] 10[centerpivotZ]
